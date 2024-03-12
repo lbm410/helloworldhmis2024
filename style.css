@@ -372,7 +372,7 @@ body {
 
 .arrowdown {
     position: relative;
-    top: 180px;
+    top: 160px;
     height: 2em;
     width: 2em;
     filter: var(--svg);
