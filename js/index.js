@@ -4,18 +4,16 @@ let lastScrollTop = 0;
 window.addEventListener("scroll", function() {
     let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentScroll > lastScrollTop) {
-        // Scroll hacia abajo
-        document.querySelector('.header').classList.add('hidden');
-        document.querySelector('.header').classList.remove('visible');
-    } else {
-        // Scroll hacia arriba
+    if (currentScroll <= 0) {
+        // Estás arriba del todo
         document.querySelector('.header').classList.remove('hidden');
         document.querySelector('.header').classList.add('visible');
+    } else {
+        // Estás bajando
+        document.querySelector('.header').classList.add('hidden');
+        document.querySelector('.header').classList.remove('visible');
     }
-    
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para dispositivos móviles iOS
-}, false);
+});
 
 
 const darkMode = document.querySelector(".dark-mode");
