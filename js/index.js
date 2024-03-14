@@ -62,4 +62,8 @@ links.forEach((el) => {
     });
 });
 
+Splitting();
+ScrollOut({
+   targets: '[data-splitting]'
+});
 

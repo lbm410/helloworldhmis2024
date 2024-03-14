@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* Definición de variables */
+/* Variables */
 :root {
     --rojo: #e50914;
     --background-color: white;
@@ -26,7 +26,7 @@
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
-/* Variables para el modo oscuro */
+/* Variables modo oscuro */
 .dark-mode-variables{
     --texto-principal: white;
     --background-color: #4d4d4d;
@@ -46,7 +46,7 @@
     --circulo4: invert(1) sepia(83%) saturate(212%) hue-rotate(263deg) brightness(84%) contrast(87%);
 }
 
-/* Estilos generales */
+/* General */
 * {
     margin: 0;
     padding: 0;
@@ -86,6 +86,7 @@ li {
     list-style-type: none;
     color: var(--texto-principal);
 }
+
 body {
     font-family: var(--tipo-principal);
     font-size: 100%;
@@ -93,7 +94,21 @@ body {
     background-color: var(--background-color);
 }
 
-/* Definición de estilos para los círculos */
+h2.splitting {
+    color: saturate(lighten(#000000,55%),60%);
+    .char {
+      transition: transform .3s cubic-bezier(.3, 0, .3, 1), opacity .3s linear;
+      transition-delay: calc( 20ms * var(--char-index) );
+  
+    }
+  
+    &[data-scroll="out"] .char {
+      opacity: 0.1;
+      transform: translateY( .25em );
+    }
+  }
+
+/* Círculos */
 .circulos {
     display: none;
     position: fixed;
@@ -129,7 +144,7 @@ body {
     }
 }
 
-/* Definición de estilos para el encabezado */
+/* Encabezado */
 .header {
     width: 100%;
     min-width: 5em;
@@ -241,7 +256,7 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-    /* Estilos para dispositivos móviles */
+    /* Dispositivos móviles */
     .header {
         position: fixed;
         justify-content: center;
@@ -249,21 +264,21 @@ body {
         left: 0;
         width: 100%;
         z-index: 99;
-        transition: top 0.3s; /* Agregamos una transición suave para que el encabezado desaparezca/aparezca */
+        transition: top 0.3s;
     }
 
     .header.hidden {
-        top: -100px; /* Mover el encabezado fuera de la pantalla */
+        top: -100px;
     }
 
     .header.visible {
-        top: 0; /* Mostrar el encabezado en la parte superior */
+        top: 0;
     }
 }
 
 
 
-/* Definición de estilos para la sección principal */
+/* Seccion Principal */
 .main {
     margin: 1em 0;
     text-align: center;
@@ -386,7 +401,7 @@ body {
     margin: 0 0 1rem;
 }
 
-/* Definición de estilos para la sección "Sobre mí" */
+/* Sobre mí */
 .about {
     color: var(--texto-principal);
 }
@@ -432,6 +447,7 @@ mark, .mark {
 .tech {
     width: 3em;
     margin: 2em;
+    margin-bottom: 3em;
     display: inline-block;
     flex-flow: row wrap;
     justify-content: center;
@@ -439,7 +455,7 @@ mark, .mark {
     filter: var(--svg);
 }
 
-/* Definición de estilos para el pie de página */
+/* Pie de Página */
 .footer {
     text-align: center;
     color: var(--texto-principal);
@@ -451,7 +467,7 @@ mark, .mark {
     z-index: 2;
 }
 
-/* Estilos responsivos */
+/* Responsive */
 @media only screen and (max-width: 768px) {
     .header {
         padding: 1em;
@@ -472,5 +488,10 @@ mark, .mark {
     .seccion#inicio {
         padding-top: 10em;
         padding-bottom: 15em;
+    }
+
+    .tech {
+        margin: 1em;
+        margin-bottom: 2.5em;
     }
 }
